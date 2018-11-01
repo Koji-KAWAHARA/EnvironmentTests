@@ -1,0 +1,258 @@
+Last login: Wed Oct 31 18:19:44 on ttys001
+dhcp-057-026:2OPvector kojikawahara$ ls
+MP_vector.py
+dhcp-057-026:2OPvector kojikawahara$ python MP_vector.py 
+Traceback (most recent call last):
+  File "MP_vector.py", line 154, in <module>
+    D = [rm.nablax(Ng), rm.nablay(Ng), rm.nablaz(Ng)]
+  File "MP_vector.py", line 75, in nablaz
+    A = np.zeros(Ng**2, Ng**2)
+TypeError: data type not understood
+dhcp-057-026:2OPvector kojikawahara$ python MP_vector.py 
+Traceback (most recent call last):
+  File "MP_vector.py", line 157, in <module>
+    rm.integrate(D, x, y, P, M)  # simulate
+  File "MP_vector.py", line 100, in integrate
+    DintP = self.DintP(Ng, P, M)
+  File "MP_vector.py", line 89, in DintP
+    first = np.einsum("nij,jn,iu->iu", D, M, M)  # (D.M)M part
+  File "/Users/kojikawahara/anaconda2/lib/python2.7/site-packages/numpy/core/einsumfunc.py", line 1069, in einsum
+    return c_einsum(*operands, **kwargs)
+ValueError: einstein sum subscripts string contains too many subscripts for operand 0
+dhcp-057-026:2OPvector kojikawahara$ M[0]
+-bash: M[0]: command not found
+dhcp-057-026:2OPvector kojikawahara$ M[0]
+-bash: M[0]: command not found
+dhcp-057-026:2OPvector kojikawahara$ python MP_vector.py 
+Traceback (most recent call last):
+  File "MP_vector.py", line 158, in <module>
+    rm.integrate(D, x, y, P, M)  # simulate
+  File "MP_vector.py", line 100, in integrate
+    DintP = self.DintP(Ng, P, M)
+  File "MP_vector.py", line 89, in DintP
+    first = np.einsum("nij,jn,iu->iu", D, M, M)  # (D.M)M part
+  File "/Users/kojikawahara/anaconda2/lib/python2.7/site-packages/numpy/core/einsumfunc.py", line 1069, in einsum
+    return c_einsum(*operands, **kwargs)
+ValueError: einstein sum subscripts string contains too many subscripts for operand 0
+dhcp-057-026:2OPvector kojikawahara$ python MP_vector.py 
+[-1.43535662 -0.55606295  0.79037872]
+Traceback (most recent call last):
+  File "MP_vector.py", line 158, in <module>
+    rm.integrate(D, x, y, P, M)  # simulate
+  File "MP_vector.py", line 100, in integrate
+    DintP = self.DintP(Ng, P, M)
+  File "MP_vector.py", line 89, in DintP
+    first = np.einsum("nij,jn,iu->iu", D, M, M)  # (D.M)M part
+  File "/Users/kojikawahara/anaconda2/lib/python2.7/site-packages/numpy/core/einsumfunc.py", line 1069, in einsum
+    return c_einsum(*operands, **kwargs)
+ValueError: einstein sum subscripts string contains too many subscripts for operand 0
+dhcp-057-026:2OPvector kojikawahara$ python MP_vector.py 
+[-1.67039613  0.9075985   0.35682063]
+Traceback (most recent call last):
+  File "MP_vector.py", line 158, in <module>
+    rm.integrate(D, x, y, P, M)  # simulate
+  File "MP_vector.py", line 100, in integrate
+    DintP = self.DintP(Ng, P, M)
+  File "MP_vector.py", line 89, in DintP
+    first = np.einsum("nij,jn,iu->iu", D, M, M)  # (D.M)M part
+  File "/Users/kojikawahara/anaconda2/lib/python2.7/site-packages/numpy/core/einsumfunc.py", line 1069, in einsum
+    return c_einsum(*operands, **kwargs)
+ValueError: einstein sum subscripts string contains too many subscripts for operand 0
+dhcp-057-026:2OPvector kojikawahara$ python MP_vector.py 
+Traceback (most recent call last):
+  File "MP_vector.py", line 158, in <module>
+    rm.integrate(D, x, y, P, M)  # simulate
+  File "MP_vector.py", line 100, in integrate
+    DintP = self.DintP(Ng, P, M)
+  File "MP_vector.py", line 89, in DintP
+    first = np.einsum("nij,nj,ui->ui", D, M, M)  # (D.M)M part
+  File "/Users/kojikawahara/anaconda2/lib/python2.7/site-packages/numpy/core/einsumfunc.py", line 1069, in einsum
+    return c_einsum(*operands, **kwargs)
+ValueError: einstein sum subscripts string contains too many subscripts for operand 0
+dhcp-057-026:2OPvector kojikawahara$ python
+Python 2.7.15 |Anaconda, Inc.| (default, May  1 2018, 18:37:05) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> D = [[[0,1,0,0],[1,0,1,0][0,1,0,1],[0,0,1,0]] , [[0,0,1,0],[0,0,0,1],[1,0,0,0],[0,1,0,0]],[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]] ]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: list indices must be integers, not tuple
+>>> D = [[1,b],[q,r]]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'b' is not defined
+>>> D = [[1,2],[3,4]]
+>>> D = [[[0,1,0,0],[1,0,1,0],[0,1,0,1],[0,0,1,0]] , [[0,0,1,0],[0,0,0,1],[1,0,0,0],[0,1,0,0]],[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]] ]
+>>> D
+[[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]], [[0, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0]], [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]]
+>>> M = np.randam.randn(4,3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'np' is not defined
+>>> import numpy as np
+>>> M = np.randam.randn(4,3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'module' object has no attribute 'randam'
+>>> M = np.random.randn(4,3)
+>>> M
+array([[-0.47963746,  1.12395094, -0.34033338],
+       [-1.17321363, -1.57984912, -0.13558114],
+       [ 0.02053439,  1.55401156, -1.11352179],
+       [-0.78712087,  0.6324126 ,  0.22885254]])
+>>> np.einsum("in,uij,jn->iu",M,D,M)
+array([[-1.16681292,  2.11575232,  0.        ],
+       [-3.49503539, -0.10668365,  0.        ],
+       [-1.61644132,  2.11575232,  0.        ],
+       [ 0.71178115, -0.10668365,  0.        ]])
+>>> Ng = 2
+>>> def nabla(self,Ng):
+... e = np.ones(Ng**2)
+  File "<stdin>", line 2
+    e = np.ones(Ng**2)
+    ^
+IndentationError: expected an indented block
+>>> def nabla(self,Ng):
+...     e = np.ones(Ng**2)
+...     A = spdiags([e,e],[-1,1],Ng**2,Ng**2)
+...     return A
+... 
+>>> N = nabla(Ng)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: nabla() takes exactly 2 arguments (1 given)
+>>> N = nabla(self,Ng)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'self' is not defined
+>>> def nabla(Ng):
+...     e = np.ones(Ng**2)
+...     A = spdiags([e,e],[-1,1],Ng**2,Ng**2)
+...     return A
+... 
+>>> def nabla(Ng):
+...     e = np.ones(Ng**2)
+...     A = spdiags([e,e],[-1,1],Ng**2,Ng**2)
+...     return A
+... 
+>>> N = nabla(Ng)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in nabla
+NameError: global name 'spdiags' is not defined
+>>> from scipy.sparse import spdiags
+>>> N = nabla(Ng)
+>>> N
+<4x4 sparse matrix of type '<type 'numpy.float64'>'
+	with 6 stored elements (2 diagonals) in DIAgonal format>
+>>> show(N)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'show' is not defined
+>>> N.show()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/kojikawahara/anaconda2/lib/python2.7/site-packages/scipy/sparse/base.py", line 686, in __getattr__
+    raise AttributeError(attr + " not found")
+AttributeError: show not found
+>>> print(N)
+  (1, 0)	1.0
+  (2, 1)	1.0
+  (3, 2)	1.0
+  (0, 1)	1.0
+  (1, 2)	1.0
+  (2, 3)	1.0
+>>> N = N.tocsr()
+>>> print(N)
+  (0, 1)	1.0
+  (1, 0)	1.0
+  (1, 2)	1.0
+  (2, 1)	1.0
+  (2, 3)	1.0
+  (3, 2)	1.0
+>>> N = N.toarray()
+>>> print(N)
+[[0. 1. 0. 0.]
+ [1. 0. 1. 0.]
+ [0. 1. 0. 1.]
+ [0. 0. 1. 0.]]
+>>> N = N.tocsr()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'numpy.ndarray' object has no attribute 'tocsr'
+>>> N = nabla(Ng)
+>>> D = [N,N,N]
+>>> D
+[<4x4 sparse matrix of type '<type 'numpy.float64'>'
+	with 6 stored elements (2 diagonals) in DIAgonal format>, <4x4 sparse matrix of type '<type 'numpy.float64'>'
+	with 6 stored elements (2 diagonals) in DIAgonal format>, <4x4 sparse matrix of type '<type 'numpy.float64'>'
+	with 6 stored elements (2 diagonals) in DIAgonal format>]
+>>> D.toarray()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'toarray'
+>>> N
+<4x4 sparse matrix of type '<type 'numpy.float64'>'
+	with 6 stored elements (2 diagonals) in DIAgonal format>
+>>> N.toarray()
+array([[0., 1., 0., 0.],
+       [1., 0., 1., 0.],
+       [0., 1., 0., 1.],
+       [0., 0., 1., 0.]])
+>>> P = N/2
+>>> P
+<4x4 sparse matrix of type '<type 'numpy.float64'>'
+	with 6 stored elements (2 diagonals) in DIAgonal format>
+>>> P.toarray()
+array([[0. , 0.5, 0. , 0. ],
+       [0.5, 0. , 0.5, 0. ],
+       [0. , 0.5, 0. , 0.5],
+       [0. , 0. , 0.5, 0. ]])
+>>> np.einsum("nij,nj,ui->ui",P,M,M)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/kojikawahara/anaconda2/lib/python2.7/site-packages/numpy/core/einsumfunc.py", line 1069, in einsum
+    return c_einsum(*operands, **kwargs)
+ValueError: einstein sum subscripts string contains too many subscripts for operand 0
+>>> P = [N,N,N]
+>>> P
+[<4x4 sparse matrix of type '<type 'numpy.float64'>'
+	with 6 stored elements (2 diagonals) in DIAgonal format>, <4x4 sparse matrix of type '<type 'numpy.float64'>'
+	with 6 stored elements (2 diagonals) in DIAgonal format>, <4x4 sparse matrix of type '<type 'numpy.float64'>'
+	with 6 stored elements (2 diagonals) in DIAgonal format>]
+>>> NN = N.toarray()
+>>> P = [NN,NN,NN]
+>>> P
+[array([[0., 1., 0., 0.],
+       [1., 0., 1., 0.],
+       [0., 1., 0., 1.],
+       [0., 0., 1., 0.]]), array([[0., 1., 0., 0.],
+       [1., 0., 1., 0.],
+       [0., 1., 0., 1.],
+       [0., 0., 1., 0.]]), array([[0., 1., 0., 0.],
+       [1., 0., 1., 0.],
+       [0., 1., 0., 1.],
+       [0., 0., 1., 0.]])]
+>>> print(P)
+[array([[0., 1., 0., 0.],
+       [1., 0., 1., 0.],
+       [0., 1., 0., 1.],
+       [0., 0., 1., 0.]]), array([[0., 1., 0., 0.],
+       [1., 0., 1., 0.],
+       [0., 1., 0., 1.],
+       [0., 0., 1., 0.]]), array([[0., 1., 0., 0.],
+       [1., 0., 1., 0.],
+       [0., 1., 0., 1.],
+       [0., 0., 1., 0.]])]
+>>> np.einsum("nij,nj,ui->ui",P,M,M)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/kojikawahara/anaconda2/lib/python2.7/site-packages/numpy/core/einsumfunc.py", line 1069, in einsum
+    return c_einsum(*operands, **kwargs)
+ValueError: operands could not be broadcast together with remapped shapes [original->remapped]: (3,4,4)->(4,4,3) (4,3)->(3,4) (4,3)->(4,3,newaxis,newaxis) 
+>>> np.einsum("nij,jn,iu->iu",P,M,M)
+array([[ 1.38550181, -3.24669403,  0.98310193],
+       [-0.89751344, -1.20859133, -0.10372015],
+       [-0.05779404, -4.37376495,  3.13400666],
+       [-0.36288174,  0.29155749,  0.10550655]])
+>>> 
