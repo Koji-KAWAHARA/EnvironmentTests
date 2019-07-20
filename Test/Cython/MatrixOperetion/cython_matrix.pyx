@@ -6,6 +6,8 @@
 import numpy as np
 cimport numpy as np
 import asyncio
+import time
+from cython.parallel import prange
 
 INT = np.int
 DTYPE = np.float64
@@ -27,11 +29,15 @@ def para_AdB():
   c1 = np.zeros(N, dtype = DTYPE)
   c2 = c1; c3 = c1; c4 = c1
 
+  begin = time.time()
   for i in range(100):
     c1 = onsite_ddot(A,B)
     c2 = onsite_ddot(A,B)
     c3 = onsite_ddot(A,B)
     c4 = onsite_ddot(A,B)
+  end = time.time()
+  print(end-begin)
+  return c1
 
 
 """Dot product"""
@@ -39,14 +45,33 @@ cdef np.ndarray[DTYPE_t, ndim=1] onsite_ddot(np.ndarray[DTYPE_t, ndim=2] F, np.n
   """return C[i] = A[i].B[i]"""
   # A,B = size [N * 3]
   cdef np.ndarray[DTYPE_t, ndim=1] ret= np.zeros(N)
-  cdef size_t i
+  cdef size_t i,j
 
-  async def async_dot():
+  """
+  Async : 3.4065349102020264
+  No async:3.268634080886841
+  Prange : 0.016139984130859375
+  """
+  """asyncio mode"""
+  """
+  async def async_dot(ret, F, H):
+    global ret, F, H
     for i in range(N):
       ret[i] = np.dot(F[i],H[i])
     return True
-
   loop=asyncio.get_event_loop()
-  loop.run_until_complete(async_dot())
+  loop.run_until_complete(async_dot(ret, F, H))
+  """
+
+  """no parallelization mode"""
+  """
+  for i in range(N):
+    ret[i] = np.dot(F[i],H[i])
+  """
+
+  """Prange parallelization"""
+  for i in prange(N, nogil=True):
+    for j in prange(3):
+      ret[i] += F[i,j]*H[i,j]
 
   return ret
