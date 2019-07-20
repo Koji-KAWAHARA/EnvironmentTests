@@ -28,13 +28,26 @@ def para_AdB():
 
   c1 = np.zeros(N, dtype = DTYPE)
   c2 = c1; c3 = c1; c4 = c1
-
+  dict = {1:c1, 2:c2, 3:c3, 4:c4}
   begin = time.time()
-  for i in range(100):
-    c1 = onsite_ddot(A,B)
-    c2 = onsite_ddot(A,B)
-    c3 = onsite_ddot(A,B)
-    c4 = onsite_ddot(A,B)
+
+  """Simple execute"""
+  """
+  c1 = onsite_ddot(A,B)
+  c2 = onsite_ddot(A,B)
+  c3 = onsite_ddot(A,B)
+  c4 = onsite_ddot(A,B)
+  """
+
+  """asyncio"""
+  async def async_process(A,B):
+    for i in range(1,5):
+      dict[i] = onsite_ddot(A,B)
+    return True
+  bigloop=asyncio.get_event_loop()
+  bigloop.run_until_complete(async_process(A,B))
+
+
   end = time.time()
   print(end-begin)
   return c1
