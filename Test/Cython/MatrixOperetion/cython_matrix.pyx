@@ -5,6 +5,7 @@
 #cython: language_level=3
 import numpy as np
 cimport numpy as np
+import asyncio
 
 INT = np.int
 DTYPE = np.float64
@@ -38,9 +39,14 @@ cdef np.ndarray[DTYPE_t, ndim=1] onsite_ddot(np.ndarray[DTYPE_t, ndim=2] F, np.n
   """return C[i] = A[i].B[i]"""
   # A,B = size [N * 3]
   cdef np.ndarray[DTYPE_t, ndim=1] ret= np.zeros(N)
-  cdef unsigned int i
-  for i in range(N):
-    ret[i] = np.dot(F[i],H[i])
-    ret[i] = np.dot(F[i],H[i])
-    ret[i] = np.dot(F[i],H[i])
+  cdef size_t i
+
+  async def async_dot():
+    for i in range(N):
+      ret[i] = np.dot(F[i],H[i])
+    return True
+
+  loop=asyncio.get_event_loop()
+  loop.run_until_complete(async_dot())
+
   return ret
