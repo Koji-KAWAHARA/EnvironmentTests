@@ -1,0 +1,1656 @@
+Last login: Wed Jul 24 15:39:58 on ttys001
+dhcp-057-026:~ kojikawahara$ cd Documents/GitHub/symulation/DWstructure/Cythonized/
+dhcp-057-026:Cythonized kojikawahara$ ls
+Conn_mat.py				OPstrain.pyx
+Euler_update_deprecated			Profile.prof
+Evolution.EvoLoop.prof			Profiler.py
+Evolution_RK4.cpython-36m-darwin.so	Tool.py
+Evolution_RK4.html			__pycache__
+Evolution_RK4.pyx			convergence_t001.eps
+Initconfig.py				main.py
+OPStrain.cpython-36m-darwin.so		result
+dhcp-057-026:Cythonized kojikawahara$ c
+-bash: c: command not found
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+^C^C^C^CTraceback (most recent call last):
+  File "main.py", line 26, in <module>
+    (E_tot, velocity, loopcount) = EVO.EvoLoop(IN.maxloop, IN.minloop, IN.convergence)  # return total energy
+  File "Evolution_RK4.pyx", line 261, in Evolution_RK4.EvoLoop
+    k3d1, k3d2, k3d3, k3d4) = Evolve(normalize(F1+0.5*dt*k2F1), normalize(F2+0.5*dt*k2F2), normalize(F3+0.5*dt*k2F3), normalize(F4+0.5*dt*k2F4),
+  File "Evolution_RK4.pyx", line 406, in Evolution_RK4.Evolve
+    mxHG2 = simplecross(G2, HG2)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/lib/twodim_base.py", line 216, in diag
+    @array_function_dispatch(_diag_dispatcher)
+KeyboardInterrupt
+^C
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+8 velocity: 0.8692576030329661^C Traceback (most recent call last):
+  File "main.py", line 26, in <module>
+    (E_tot, velocity, loopcount) = EVO.EvoLoop(IN.maxloop, IN.minloop, IN.convergence)  # return total energy
+  File "Evolution_RK4.pyx", line 270, in Evolution_RK4.EvoLoop
+    k4d1, k4d2, k4d3, k4d4) = Evolve(normalize(F1+dt*k3F1), normalize(F2+dt*k3F2), normalize(F3+dt*k3F3), normalize(F4+dt*k3F4),
+  File "Evolution_RK4.pyx", line 404, in Evolution_RK4.Evolve
+    mxHF4 = simplecross(F4, HF4)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/lib/twodim_base.py", line 216, in diag
+    @array_function_dispatch(_diag_dispatcher)
+KeyboardInterrupt
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+warning: Evolution_RK4.pyx:478:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:479:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:493:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:494:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:510:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:511:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:512:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:516:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:517:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:518:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:522:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:523:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:524:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:538:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:539:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:543:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:544:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:548:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:567:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:580:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:581:8: Unsigned index type not allowed before OpenMP 3.0
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/Evolution_RK4.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define
+      NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/Evolution_RK4.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define
+      NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+ld: warning: The i386 architecture is deprecated for macOS (remove from the Xcode build setting: ARCHS)
+ld: warning: ignoring file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd, missing required architecture i386 in file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd
+70 velocity: 0.10732776890065347^C Traceback (most recent call last):
+  File "main.py", line 26, in <module>
+    (E_tot, velocity, loopcount) = EVO.EvoLoop(IN.maxloop, IN.minloop, IN.convergence)  # return total energy
+  File "Evolution_RK4.pyx", line 261, in Evolution_RK4.EvoLoop
+    k3d1, k3d2, k3d3, k3d4) = Evolve(normalize(F1+0.5*dt*k2F1), normalize(F2+0.5*dt*k2F2), normalize(F3+0.5*dt*k2F3), normalize(F4+0.5*dt*k2F4),
+  File "Evolution_RK4.pyx", line 385, in Evolution_RK4.Evolve
+    dd1 = -a*(np.diag( np.dot(G1, ((F1_G1.T).dot(F1)).T) + np.dot(G1, ((F2_G1.T).dot(F2)).T) - np.dot(G1,((F3_G1.T).dot(F3)).T) - np.dot(G1, ((F4_G1.T).dot(F4)).T))) - K*d1
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/scipy/sparse/base.py", line 674, in __getattr__
+    def __getattr__(self, attr):
+KeyboardInterrupt
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+warning: Evolution_RK4.pyx:478:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:479:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:493:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:494:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:510:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:511:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:512:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:516:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:517:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:518:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:522:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:523:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:524:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:538:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:539:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:543:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:544:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:548:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:567:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:580:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:581:8: Unsigned index type not allowed before OpenMP 3.0
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/Evolution_RK4.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define
+      NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/Evolution_RK4.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define
+      NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+ld: warning: The i386 architecture is deprecated for macOS (remove from the Xcode build setting: ARCHS)
+ld: warning: ignoring file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd, missing required architecture i386 in file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd
+23720 velocity: 9.997071251805678e-09  
+
+E_tot  = -74799.34189973018
+E_bulk = -75351.53157951355
+Spin evolution :  1549.0329358577728
+total time     :  1552.9694867134094
+dhcp-057-026:Cythonized kojikawahara$ ls
+Conn_mat.py				PostProcess
+Euler_update_deprecated			Profile.prof
+Evolution.EvoLoop.prof			Profiler.py
+Evolution_RK4.cpython-36m-darwin.so	Tool.py
+Evolution_RK4.html			__pycache__
+Evolution_RK4.pyx			convergence_t001.eps
+Initconfig.py				main.py
+OPStrain.cpython-36m-darwin.so		result
+OPstrain.pyx
+dhcp-057-026:Cythonized kojikawahara$ cd result
+dhcp-057-026:result kojikawahara$ ls
+0deg1				Fin_G-AFM_d.html
+180deg-diff-chiral		Fin_ferro_Fe.html
+180deg-smooth-start		Fin_ferro_Gd.html
+180deg-trapped-at-local-minima	Init_A-AFM_Fe.html
+180deg1				Init_A-AFM_Gd.html
+180deg2				Init_A-AFM_d.html
+180deg3-stronger aniso		Init_C-AFM_Fe.html
+180deg4-long			Init_C-AFM_Gd.html
+90deg1				Init_C-AFM_d.html
+Ene_Inv.npz			Init_Ferro_d.html
+Fin_A-AFM_Fe.html		Init_G-AFM_Fe.html
+Fin_A-AFM_Gd.html		Init_G-AFM_Gd.html
+Fin_A-AFM_d.html		Init_G-AFM_d.html
+Fin_C-AFM_Fe.html		Init_ferro_Fe.html
+Fin_C-AFM_Gd.html		Init_ferro_Gd.html
+Fin_C-AFM_d.html		settings.txt
+Fin_Ferro_d.html		settings_parms.npz
+Fin_G-AFM_Fe.html		step_d4_error.txt
+Fin_G-AFM_Gd.html
+dhcp-057-026:result kojikawahara$ gnuplot
+
+	G N U P L O T
+	Version 5.2 patchlevel 7    last modified 2019-05-29 
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2018
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'x11'
+gnuplot> !ls
+0deg1				Fin_G-AFM_Gd.html
+180deg-diff-chiral		Fin_G-AFM_d.html
+180deg-smooth-start		Fin_ferro_Fe.html
+180deg-trapped-at-local-minima	Fin_ferro_Gd.html
+180deg1				Init_A-AFM_Fe.html
+180deg2				Init_A-AFM_Gd.html
+180deg3-stronger aniso		Init_A-AFM_d.html
+180deg4-long			Init_C-AFM_Fe.html
+90deg1				Init_C-AFM_Gd.html
+Conversion.plt			Init_C-AFM_d.html
+Ene_Inv.npz			Init_Ferro_d.html
+Fin_A-AFM_Fe.html		Init_G-AFM_Fe.html
+Fin_A-AFM_Gd.html		Init_G-AFM_Gd.html
+Fin_A-AFM_d.html		Init_G-AFM_d.html
+Fin_C-AFM_Fe.html		Init_ferro_Fe.html
+Fin_C-AFM_Gd.html		Init_ferro_Gd.html
+Fin_C-AFM_d.html		settings.txt
+Fin_Ferro_d.html		settings_parms.npz
+Fin_G-AFM_Fe.html		step_d4_error.txt
+gnuplot> load "Conversion.plt"
+gnuplot> set terminal pdf
+
+Terminal type is now 'pdfcairo'
+Options are ' transparent enhanced fontscale 0.5 size 5.00in, 3.00in '
+gnuplot> set output "Convergence.pdf"
+gnuplot> replot
+gnuplot> unset terminal
+
+Terminal type is now 'x11'
+gnuplot> quit
+dhcp-057-026:result kojikawahara$ gnuplot
+
+	G N U P L O T
+	Version 5.2 patchlevel 7    last modified 2019-05-29 
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2018
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'x11'
+gnuplot> quit()
+dhcp-057-026:result kojikawahara$ python3 main.py
+/Library/Frameworks/Python.framework/Versions/3.6/Resources/Python.app/Contents/MacOS/Python: can't open file 'main.py': [Errno 2] No such file or directory
+dhcp-057-026:result kojikawahara$ cd ../
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+warning: Evolution_RK4.pyx:478:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:479:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:493:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:494:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:510:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:511:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:512:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:516:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:517:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:518:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:522:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:523:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:524:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:538:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:539:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:543:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:544:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:548:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:567:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:580:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:581:8: Unsigned index type not allowed before OpenMP 3.0
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/Evolution_RK4.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define
+      NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/Evolution_RK4.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define
+      NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+ld: warning: The i386 architecture is deprecated for macOS (remove from the Xcode build setting: ARCHS)
+ld: warning: ignoring file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd, missing required architecture i386 in file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd
+Traceback (most recent call last):
+  File "main.py", line 20, in <module>
+    IN.init_spins()
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Initconfig.py", line 112, in init_spins
+    F1 = xstripe(center_width, [1,0,0], [-1,0,0])
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Initconfig.py", line 148, in xstripe
+    Spin[Ny*Nz*x+Nz*y+z] = center_vec(x,y,z,center_width)
+NameError: name 'center_vec' is not defined
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 20, in <module>
+    IN.init_spins()
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Initconfig.py", line 115, in init_spins
+    F1 = xstripe(center_width, [1,0,0], center_vec, [-1,0,0])
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Initconfig.py", line 148, in xstripe
+    Spin[Ny*Nz*x+Nz*y+z] = center_vec(x,y,z,center_width)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Initconfig.py", line 113, in center_vec
+    return [np.cos[(x-(Nx-center_width)//2)*np.pi/center_width], np.sin[(x-(Nx-center_width)//2)*np.pi/center_width],0] # xy rotation.
+TypeError: 'numpy.ufunc' object is not subscriptable
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 26, in <module>
+    (E_tot, velocity, loopcount) = EVO.EvoLoop(IN.maxloop, IN.minloop, IN.convergence*IN.convergence)  # return total energy
+  File "Evolution_RK4.pyx", line 319, in Evolution_RK4.EvoLoop
+    CONV = np.vstack([CONV, np.array([loopcount, d4[center], G4[center, 2], G4[center,0]/np.sqrt(G4[center,0]**2+G4[center,1]**2), velocity])])
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/shape_base.py", line 283, in vstack
+    return _nx.concatenate([atleast_2d(_m) for _m in tup], 0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+warning: Evolution_RK4.pyx:478:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:479:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:493:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:494:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:510:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:511:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:512:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:516:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:517:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:518:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:522:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:523:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:524:12: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:538:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:539:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:543:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:544:10: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:548:8: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:567:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:580:6: Unsigned index type not allowed before OpenMP 3.0
+warning: Evolution_RK4.pyx:581:8: Unsigned index type not allowed before OpenMP 3.0
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/Evolution_RK4.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/Evolution_RK4.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+ld: warning: The i386 architecture is deprecated for macOS (remove from the Xcode build setting: ARCHS)
+ld: warning: ignoring file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd, missing required architecture i386 in file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd
+37925 velocity: 1.56929105693642e-05^C Traceback (most recent call last):
+  File "main.py", line 26, in <module>
+    (E_tot, velocity, loopcount) = EVO.EvoLoop(IN.maxloop, IN.minloop, IN.convergence*IN.convergence)  # return total energy
+  File "Evolution_RK4.pyx", line 243, in Evolution_RK4.EvoLoop
+    k1d1, k1d2, k1d3, k1d4) = Evolve(F1, F2, F3, F4,
+  File "Evolution_RK4.pyx", line 385, in Evolution_RK4.Evolve
+    dd1 = -a*(np.diag( np.dot(G1, ((F1_G1.T).dot(F1)).T) + np.dot(G1, ((F2_G1.T).dot(F2)).T) - np.dot(G1,((F3_G1.T).dot(F3)).T) - np.dot(G1, ((F4_G1.T).dot(F4)).T))) - K*d1
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/lib/twodim_base.py", line 216, in diag
+    @array_function_dispatch(_diag_dispatcher)
+KeyboardInterrupt
+dhcp-057-026:Cythonized kojikawahara$ cd ./result
+dhcp-057-026:result kojikawahara$ ls
+0deg1				Conversion.plt			Fin_G-AFM_Gd.html		Init_Ferro_d.html
+180deg-diff-chiral		Ene_Inv.npz			Fin_G-AFM_d.html		Init_G-AFM_Fe.html
+180deg-smooth-start		Fin_A-AFM_Fe.html		Fin_ferro_Fe.html		Init_G-AFM_Gd.html
+180deg-trapped-at-local-minima	Fin_A-AFM_Gd.html		Fin_ferro_Gd.html		Init_G-AFM_d.html
+180deg1				Fin_A-AFM_d.html		Init_A-AFM_Fe.html		Init_ferro_Fe.html
+180deg2				Fin_C-AFM_Fe.html		Init_A-AFM_Gd.html		Init_ferro_Gd.html
+180deg3-stronger aniso		Fin_C-AFM_Gd.html		Init_A-AFM_d.html		settings.txt
+180deg4-long			Fin_C-AFM_d.html		Init_C-AFM_Fe.html		settings_parms.npz
+90deg1				Fin_Ferro_d.html		Init_C-AFM_Gd.html		step_d4_error.txt
+Convergence.pdf			Fin_G-AFM_Fe.html		Init_C-AFM_d.html
+dhcp-057-026:result kojikawahara$ gnuplot Conversion.plt
+"Conversion.plt" line 5: warning: Skipping data file with no valid points
+"Conversion.plt" line 8: warning: Skipping data file with no valid points
+dhcp-057-026:result kojikawahara$ gnuplot Conversion.plt
+"Conversion.plt" line 5: warning: Skipping data file with no valid points
+"Conversion.plt" line 8: warning: Skipping data file with no valid points
+dhcp-057-026:result kojikawahara$ gnuplot Conversion.plt
+"Conversion.plt" line 5: warning: Skipping data file with no valid points
+"Conversion.plt" line 8: warning: Skipping data file with no valid points
+dhcp-057-026:result kojikawahara$ cd ../
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Compiler/Main.py:367: FutureWarning:
+
+Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/AngleDistribution.pyx
+
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+cimport numpy as np
+from cython.parallel import prange
+
+ctypedef np.float64_t DOUBLE_t
+
+def np.ndarray[DOUBLE_t, ndim=2] Cart2Pol(np.ndarray[DOUBLE_t, ndim=2] vfcart, size_t Ntot):
+     ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:7:6: Expected '(', found '.'. Did you use cdef syntax in a Python declaration? Use decorators and Python type annotations instead.
+/Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/AngleDistribution.c:1:2: error: Do not use this file, it is the result of a
+      failed Cython compilation.
+#error Do not use this file, it is the result of a failed Cython compilation.
+ ^
+1 error generated.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 118, in _compile
+    extra_postargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 909, in spawn
+    spawn(cmd, dry_run=self.dry_run)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/spawn.py", line 36, in spawn
+    _spawn_posix(cmd, search_path, dry_run=dry_run)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/spawn.py", line 159, in _spawn_posix
+    % (cmd, exit_status))
+distutils.errors.DistutilsExecError: command 'gcc' failed with exit status 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 215, in load_module
+    inplace=build_inplace, language_level=language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 191, in build_module
+    reload_support=pyxargs.reload_support)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyxbuild.py", line 102, in pyx_to_dll
+    dist.run_commands()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 955, in run_commands
+    self.run_command(cmd)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 974, in run_command
+    cmd_obj.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 186, in run
+    _build_ext.build_ext.run(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 339, in run
+    self.build_extensions()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 194, in build_extensions
+    self.build_extension(ext)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 533, in build_extension
+    depends=ext.depends)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 574, in compile
+    self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 120, in _compile
+    raise CompileError(msg)
+distutils.errors.CompileError: command 'gcc' failed with exit status 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    import Evolution_RK4 as EVO
+  File "Evolution_RK4.pyx", line 14, in init Evolution_RK4
+    import Tool
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 7, in <module>
+    import AngleDistribution as AD
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 462, in load_module
+    language_level=self.language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 231, in load_module
+    raise exc.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 215, in load_module
+    inplace=build_inplace, language_level=language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 191, in build_module
+    reload_support=pyxargs.reload_support)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyxbuild.py", line 102, in pyx_to_dll
+    dist.run_commands()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 955, in run_commands
+    self.run_command(cmd)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 974, in run_command
+    cmd_obj.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 186, in run
+    _build_ext.build_ext.run(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 339, in run
+    self.build_extensions()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 194, in build_extensions
+    self.build_extension(ext)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 533, in build_extension
+    depends=ext.depends)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 574, in compile
+    self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 120, in _compile
+    raise CompileError(msg)
+ImportError: Building module AngleDistribution failed: ["distutils.errors.CompileError: command 'gcc' failed with exit status 1\n"]
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Compiler/Main.py:367: FutureWarning:
+
+Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/AngleDistribution.pyx
+
+warning: AngleDistribution.pyx:11:6: Unsigned index type not allowed before OpenMP 3.0
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+cpdef np.ndarray[DOUBLE_t, ndim=2] Cart2Pol(np.ndarray[DOUBLE_t, ndim=2] vfcart, size_t Ntot):
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+                       ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:12:24: Coercion from Python not allowed without the GIL
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+cpdef np.ndarray[DOUBLE_t, ndim=2] Cart2Pol(np.ndarray[DOUBLE_t, ndim=2] vfcart, size_t Ntot):
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+                       ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:12:24: Calling gil-requiring function not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+cpdef np.ndarray[DOUBLE_t, ndim=2] Cart2Pol(np.ndarray[DOUBLE_t, ndim=2] vfcart, size_t Ntot):
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+                  ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:12:19: Accessing Python attribute not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+cpdef np.ndarray[DOUBLE_t, ndim=2] Cart2Pol(np.ndarray[DOUBLE_t, ndim=2] vfcart, size_t Ntot):
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+                ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:12:17: Accessing Python global or builtin not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+cpdef np.ndarray[DOUBLE_t, ndim=2] Cart2Pol(np.ndarray[DOUBLE_t, ndim=2] vfcart, size_t Ntot):
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+                       ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:12:24: Constructing Python tuple not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+cpdef np.ndarray[DOUBLE_t, ndim=2] Cart2Pol(np.ndarray[DOUBLE_t, ndim=2] vfcart, size_t Ntot):
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+                                                                       ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:12:72: Converting to Python object not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+                         ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:13:26: Coercion from Python not allowed without the GIL
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+                         ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:13:26: Calling gil-requiring function not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+                  ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:13:19: Accessing Python attribute not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+                ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:13:17: Accessing Python global or builtin not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+                         ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:13:26: Constructing Python tuple not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  #vfield : vector field in cartetian coord. (vfcart = [[x1,y1,z1],...,[xN,yN,zN])
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+                                     ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:13:38: Converting to Python object not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                         ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:26: Coercion from Python not allowed without the GIL
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                         ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:26: Calling gil-requiring function not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                  ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:19: Accessing Python attribute not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:17: Accessing Python global or builtin not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                         ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:26: Constructing Python tuple not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                                     ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:38: Operation not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                                ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:33: Converting to Python object not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                                             ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:46: Calling gil-requiring function not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                                        ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:41: Accessing Python attribute not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                                      ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:39: Accessing Python global or builtin not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                                             ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:46: Constructing Python tuple not allowed without gil
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+  cdef size_t i,u
+  cdef np.ndarray[DOUBLE_t, ndim=2] ret = np.zeros([Ntot,3])
+  for i in prange(Ntot, nogil=True):
+      ret[i,0] = np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2])
+      ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+      ret[i,2] = np.arccos(vfcart[i,0]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]))
+                                                                     ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:14:70: Converting to Python object not allowed without gil
+/Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/AngleDistribution.c:1:2: error: Do not use this file, it is the result of a
+      failed Cython compilation.
+#error Do not use this file, it is the result of a failed Cython compilation.
+ ^
+1 error generated.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 118, in _compile
+    extra_postargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 909, in spawn
+    spawn(cmd, dry_run=self.dry_run)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/spawn.py", line 36, in spawn
+    _spawn_posix(cmd, search_path, dry_run=dry_run)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/spawn.py", line 159, in _spawn_posix
+    % (cmd, exit_status))
+distutils.errors.DistutilsExecError: command 'gcc' failed with exit status 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 215, in load_module
+    inplace=build_inplace, language_level=language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 191, in build_module
+    reload_support=pyxargs.reload_support)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyxbuild.py", line 102, in pyx_to_dll
+    dist.run_commands()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 955, in run_commands
+    self.run_command(cmd)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 974, in run_command
+    cmd_obj.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 186, in run
+    _build_ext.build_ext.run(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 339, in run
+    self.build_extensions()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 194, in build_extensions
+    self.build_extension(ext)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 533, in build_extension
+    depends=ext.depends)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 574, in compile
+    self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 120, in _compile
+    raise CompileError(msg)
+distutils.errors.CompileError: command 'gcc' failed with exit status 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    import Evolution_RK4 as EVO
+  File "Evolution_RK4.pyx", line 14, in init Evolution_RK4
+    import Tool
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 7, in <module>
+    import AngleDistribution as AD
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 462, in load_module
+    language_level=self.language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 231, in load_module
+    raise exc.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 215, in load_module
+    inplace=build_inplace, language_level=language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 191, in build_module
+    reload_support=pyxargs.reload_support)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyxbuild.py", line 102, in pyx_to_dll
+    dist.run_commands()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 955, in run_commands
+    self.run_command(cmd)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 974, in run_command
+    cmd_obj.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 186, in run
+    _build_ext.build_ext.run(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 339, in run
+    self.build_extensions()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 194, in build_extensions
+    self.build_extension(ext)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 533, in build_extension
+    depends=ext.depends)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 574, in compile
+    self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 120, in _compile
+    raise CompileError(msg)
+ImportError: Building module AngleDistribution failed: ["distutils.errors.CompileError: command 'gcc' failed with exit status 1\n"]
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Compiler/Main.py:367: FutureWarning:
+
+Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/AngleDistribution.pyx
+
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+cimport numpy as np
+from cython.parallel import prange
+
+ctypedef np.float64_t DOUBLE_t
+
+def np.ndarray[DOUBLE_t, ndim=2] Cart2Pol(np.ndarray[DOUBLE_t, ndim=2] vfcart, size_t Ntot):
+     ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:7:6: Expected '(', found '.'. Did you use cdef syntax in a Python declaration? Use decorators and Python type annotations instead.
+/Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/AngleDistribution.c:1:2: error: Do not use this file, it is the result of a
+      failed Cython compilation.
+#error Do not use this file, it is the result of a failed Cython compilation.
+ ^
+1 error generated.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 118, in _compile
+    extra_postargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 909, in spawn
+    spawn(cmd, dry_run=self.dry_run)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/spawn.py", line 36, in spawn
+    _spawn_posix(cmd, search_path, dry_run=dry_run)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/spawn.py", line 159, in _spawn_posix
+    % (cmd, exit_status))
+distutils.errors.DistutilsExecError: command 'gcc' failed with exit status 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 215, in load_module
+    inplace=build_inplace, language_level=language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 191, in build_module
+    reload_support=pyxargs.reload_support)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyxbuild.py", line 102, in pyx_to_dll
+    dist.run_commands()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 955, in run_commands
+    self.run_command(cmd)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 974, in run_command
+    cmd_obj.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 186, in run
+    _build_ext.build_ext.run(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 339, in run
+    self.build_extensions()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 194, in build_extensions
+    self.build_extension(ext)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 533, in build_extension
+    depends=ext.depends)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 574, in compile
+    self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 120, in _compile
+    raise CompileError(msg)
+distutils.errors.CompileError: command 'gcc' failed with exit status 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    import Evolution_RK4 as EVO
+  File "Evolution_RK4.pyx", line 14, in init Evolution_RK4
+    import Tool
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 7, in <module>
+    import AngleDistribution as AD
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 462, in load_module
+    language_level=self.language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 231, in load_module
+    raise exc.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 215, in load_module
+    inplace=build_inplace, language_level=language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 191, in build_module
+    reload_support=pyxargs.reload_support)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyxbuild.py", line 102, in pyx_to_dll
+    dist.run_commands()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 955, in run_commands
+    self.run_command(cmd)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 974, in run_command
+    cmd_obj.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 186, in run
+    _build_ext.build_ext.run(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 339, in run
+    self.build_extensions()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 194, in build_extensions
+    self.build_extension(ext)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 533, in build_extension
+    depends=ext.depends)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 574, in compile
+    self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 120, in _compile
+    raise CompileError(msg)
+ImportError: Building module AngleDistribution failed: ["distutils.errors.CompileError: command 'gcc' failed with exit status 1\n"]
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Compiler/Main.py:367: FutureWarning:
+
+Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/AngleDistribution.pyx
+
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+cimport numpy as np
+from cython.parallel import prange
+
+ctypedef np.float64_t DOUBLE_t
+
+def np.ndarray[DOUBLE_t, ndim=2] Cart2Pol(np.ndarray[DOUBLE_t, ndim=2] vfcart, size_t Ntot):
+     ^
+------------------------------------------------------------
+
+AngleDistribution.pyx:7:6: Expected '(', found '.'. Did you use cdef syntax in a Python declaration? Use decorators and Python type annotations instead.
+/Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/AngleDistribution.c:1:2: error: Do not use this file, it is the result of a
+      failed Cython compilation.
+#error Do not use this file, it is the result of a failed Cython compilation.
+ ^
+1 error generated.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 118, in _compile
+    extra_postargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 909, in spawn
+    spawn(cmd, dry_run=self.dry_run)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/spawn.py", line 36, in spawn
+    _spawn_posix(cmd, search_path, dry_run=dry_run)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/spawn.py", line 159, in _spawn_posix
+    % (cmd, exit_status))
+distutils.errors.DistutilsExecError: command 'gcc' failed with exit status 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 215, in load_module
+    inplace=build_inplace, language_level=language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 191, in build_module
+    reload_support=pyxargs.reload_support)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyxbuild.py", line 102, in pyx_to_dll
+    dist.run_commands()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 955, in run_commands
+    self.run_command(cmd)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 974, in run_command
+    cmd_obj.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 186, in run
+    _build_ext.build_ext.run(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 339, in run
+    self.build_extensions()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 194, in build_extensions
+    self.build_extension(ext)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 533, in build_extension
+    depends=ext.depends)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 574, in compile
+    self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 120, in _compile
+    raise CompileError(msg)
+distutils.errors.CompileError: command 'gcc' failed with exit status 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    import Evolution_RK4 as EVO
+  File "Evolution_RK4.pyx", line 14, in init Evolution_RK4
+    import Tool
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 7, in <module>
+    import AngleDistribution as AD
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 462, in load_module
+    language_level=self.language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 231, in load_module
+    raise exc.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 215, in load_module
+    inplace=build_inplace, language_level=language_level)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyximport.py", line 191, in build_module
+    reload_support=pyxargs.reload_support)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyximport/pyxbuild.py", line 102, in pyx_to_dll
+    dist.run_commands()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 955, in run_commands
+    self.run_command(cmd)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/dist.py", line 974, in run_command
+    cmd_obj.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 186, in run
+    _build_ext.build_ext.run(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 339, in run
+    self.build_extensions()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Distutils/old_build_ext.py", line 194, in build_extensions
+    self.build_extension(ext)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/command/build_ext.py", line 533, in build_extension
+    depends=ext.depends)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/ccompiler.py", line 574, in compile
+    self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/distutils/unixccompiler.py", line 120, in _compile
+    raise CompileError(msg)
+ImportError: Building module AngleDistribution failed: ["distutils.errors.CompileError: command 'gcc' failed with exit status 1\n"]
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Compiler/Main.py:367: FutureWarning:
+
+Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/AngleDistribution.pyx
+
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/AngleDistribution.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/AngleDistribution.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+ld: warning: The i386 architecture is deprecated for macOS (remove from the Xcode build setting: ARCHS)
+ld: warning: ignoring file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd, missing required architecture i386 in file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 162, in Visall
+    fig.add_trace(go.Scatter(x=IN.unitx, y = AD.Cart2Pol(FeG,IN.Ntot), mode='lines', name='Fe, G-AFM'))
+  File "AngleDistribution.pyx", line 13, in AngleDistribution.Cart2Pol
+    ret[i,1] = np.arccos(vfcart[i,2]/ret[i,0])
+ZeroDivisionError: float division
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 162, in Visall
+    fig.add_trace(go.Scatter(x=IN.unitx, y = AD.Cart2Pol(FeG,IN.Ntot), mode='lines', name='Fe, G-AFM'))
+  File "AngleDistribution.pyx", line 13, in AngleDistribution.Cart2Pol
+    ret[i,1] = np.arccos(vfcart[i,2]/np.sqrt(vfcart[i,0]*vfcart[i,0]+vfcart[i,1]*vfcart[i,1]+vfcart[i,2]*vfcart[i,2]))
+ZeroDivisionError: float division
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/Cython/Compiler/Main.py:367: FutureWarning:
+
+Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/AngleDistribution.pyx
+
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/AngleDistribution.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+In file included from /Users/kojikawahara/.pyxbld/temp.macosx-10.6-intel-3.6/pyrex/AngleDistribution.c:598:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: 
+      "Using deprecated NumPy API, disable it with "          "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+ld: warning: The i386 architecture is deprecated for macOS (remove from the Xcode build setting: ARCHS)
+ld: warning: ignoring file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd, missing required architecture i386 in file /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libSystem.tbd
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:162: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:163: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 164, in Visall
+    fig.show()
+AttributeError: 'Figure' object has no attribute 'show'
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:162: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:163: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 164, in Visall
+    fig.show()
+AttributeError: 'Figure' object has no attribute 'show'
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:162: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:163: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 164, in Visall
+    fig.plot()
+AttributeError: 'Figure' object has no attribute 'plot'
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:163: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:164: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 165, in Visall
+    pio.show(fig)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/io/_renderers.py", line 352, in show
+    'Mime type rendering requires ipython but it is not installed')
+ValueError: Mime type rendering requires ipython but it is not installed
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:162: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:163: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 164, in Visall
+    fig.show()
+AttributeError: 'Figure' object has no attribute 'show'
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 161, in Visall
+    fig = go.figure()
+AttributeError: module 'plotly.graph_objs' has no attribute 'figure'
+dhcp-057-026:Cythonized kojikawahara$ python
+Python 2.7.15 |Anaconda, Inc.| (default, May  1 2018, 18:37:05) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import plotly.graph_objects as go
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named plotly.graph_objects
+>>> import numpy as np
+>>> 
+>>> x = np.arange(10)
+>>> 
+>>> fig = go.Figure(data=go.Scatter(x=x, y=x**2))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'go' is not defined
+>>> fig.show()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'fig' is not defined
+>>> import plotly.graph_objects as go
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named plotly.graph_objects
+>>> import plotly.graph_objs as go
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named plotly.graph_objs
+>>> import plotly.
+  File "<stdin>", line 1
+    import plotly.
+                 ^
+SyntaxError: invalid syntax
+>>> import plotly
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named plotly
+>>> quit
+Use quit() or Ctrl-D (i.e. EOF) to exit
+>>> quit()
+dhcp-057-026:Cythonized kojikawahara$ python3
+Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 03:03:55) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import plotly.graph_objects as go
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'plotly.graph_objects'
+>>> import numpy as np
+>>> 
+>>> x = np.arange(10)
+>>> 
+>>> fig = go.Figure(data=go.Scatter(x=x, y=x**2))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'go' is not defined
+>>> fig.show()>>> 
+>>> quit()
+dhcp-057-026:Cythonized kojikawahara$ python3
+Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 03:03:55) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import plotly
+>>> import plotly.graph_objs as go
+>>> import numpy as np
+>>> 
+>>> x = np.arange(10)
+>>> 
+>>> fig = go.Figure(data=go.Scatter(x=x, y=x**2))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/graph_objs/_figure.py", line 510, in __init__
+    self).__init__(data, layout, frames, skip_invalid, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/basedatatypes.py", line 152, in __init__
+    skip_invalid=skip_invalid)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/_plotly_utils/basevalidators.py", line 2365, in validate_coerce
+    self.raise_invalid_val(v)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/_plotly_utils/basevalidators.py", line 277, in raise_invalid_val
+    valid_clr_desc=self.description()))
+ValueError: 
+    Invalid value of type 'plotly.graph_objs.Scatter' received for the 'data' property of 
+        Received value: Scatter({
+    'x': array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]), 'y': array([ 0,  1,  4,  9, 16, 25, 36, 49, 64, 81])
+})
+
+    The 'data' property is a tuple of trace instances
+    that may be specified as:
+      - A list or tuple of trace instances
+        (e.g. [Scatter(...), Bar(...)])
+      - A list or tuple of dicts of string/value properties where:
+        - The 'type' property specifies the trace type
+            One of: ['area', 'bar', 'barpolar', 'box',
+                     'candlestick', 'carpet', 'choropleth', 'cone',
+                     'contour', 'contourcarpet', 'heatmap',
+                     'heatmapgl', 'histogram', 'histogram2d',
+                     'histogram2dcontour', 'isosurface', 'mesh3d',
+                     'ohlc', 'parcats', 'parcoords', 'pie',
+                     'pointcloud', 'sankey', 'scatter',
+                     'scatter3d', 'scattercarpet', 'scattergeo',
+                     'scattergl', 'scattermapbox', 'scatterpolar',
+                     'scatterpolargl', 'scatterternary', 'splom',
+                     'streamtube', 'sunburst', 'surface', 'table',
+                     'violin', 'volume', 'waterfall']
+
+        - All remaining properties are passed to the constructor of
+          the specified trace type
+
+        (e.g. [{'type': 'scatter', ...}, {'type': 'bar, ...}])
+>>> fig.show()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'fig' is not defined
+>>> fig = go.Figure(data=go.Scatter(x=x, y=x**2))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/graph_objs/_figure.py", line 510, in __init__
+    self).__init__(data, layout, frames, skip_invalid, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/basedatatypes.py", line 152, in __init__
+    skip_invalid=skip_invalid)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/_plotly_utils/basevalidators.py", line 2365, in validate_coerce
+    self.raise_invalid_val(v)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/_plotly_utils/basevalidators.py", line 277, in raise_invalid_val
+    valid_clr_desc=self.description()))
+ValueError: 
+    Invalid value of type 'plotly.graph_objs.Scatter' received for the 'data' property of 
+        Received value: Scatter({
+    'x': array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]), 'y': array([ 0,  1,  4,  9, 16, 25, 36, 49, 64, 81])
+})
+
+    The 'data' property is a tuple of trace instances
+    that may be specified as:
+      - A list or tuple of trace instances
+        (e.g. [Scatter(...), Bar(...)])
+      - A list or tuple of dicts of string/value properties where:
+        - The 'type' property specifies the trace type
+            One of: ['area', 'bar', 'barpolar', 'box',
+                     'candlestick', 'carpet', 'choropleth', 'cone',
+                     'contour', 'contourcarpet', 'heatmap',
+                     'heatmapgl', 'histogram', 'histogram2d',
+                     'histogram2dcontour', 'isosurface', 'mesh3d',
+                     'ohlc', 'parcats', 'parcoords', 'pie',
+                     'pointcloud', 'sankey', 'scatter',
+                     'scatter3d', 'scattercarpet', 'scattergeo',
+                     'scattergl', 'scattermapbox', 'scatterpolar',
+                     'scatterpolargl', 'scatterternary', 'splom',
+                     'streamtube', 'sunburst', 'surface', 'table',
+                     'violin', 'volume', 'waterfall']
+
+        - All remaining properties are passed to the constructor of
+          the specified trace type
+
+        (e.g. [{'type': 'scatter', ...}, {'type': 'bar, ...}])
+>>> quit()
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:163: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:164: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+8743 velocity: 9.091149937330612e-05^C Traceback (most recent call last):
+  File "main.py", line 26, in <module>
+    (E_tot, velocity, loopcount) = EVO.EvoLoop(IN.maxloop, IN.minloop, IN.convergence*IN.convergence)  # return total energy
+  File "Evolution_RK4.pyx", line 261, in Evolution_RK4.EvoLoop
+    k3d1, k3d2, k3d3, k3d4) = Evolve(normalize(F1+0.5*dt*k2F1), normalize(F2+0.5*dt*k2F2), normalize(F3+0.5*dt*k2F3), normalize(F4+0.5*dt*k2F4),
+  File "Evolution_RK4.pyx", line 385, in Evolution_RK4.Evolve
+    dd1 = -a*(np.diag( np.dot(G1, ((F1_G1.T).dot(F1)).T) + np.dot(G1, ((F2_G1.T).dot(F2)).T) - np.dot(G1,((F3_G1.T).dot(F3)).T) - np.dot(G1, ((F4_G1.T).dot(F4)).T))) - K*d1
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/lib/twodim_base.py", line 216, in diag
+    @array_function_dispatch(_diag_dispatcher)
+KeyboardInterrupt
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:163: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:164: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+15604 velocity: 1.664060917061607e-05^C Traceback (most recent call last):
+  File "main.py", line 26, in <module>
+    (E_tot, velocity, loopcount) = EVO.EvoLoop(IN.maxloop, IN.minloop, IN.convergence*IN.convergence)  # return total energy
+  File "Evolution_RK4.pyx", line 252, in Evolution_RK4.EvoLoop
+    k2d1, k2d2, k2d3, k2d4) = Evolve(normalize(F1+0.5*dt*k1F1), normalize(F2+0.5*dt*k1F2), normalize(F3+0.5*dt*k1F3), normalize(F4+0.5*dt*k1F4),
+  File "Evolution_RK4.pyx", line 388, in Evolution_RK4.Evolve
+    dd4 = -a*(np.diag(-np.dot(G4, ((F1_G4.T).dot(F1)).T) - np.dot(G4, ((F2_G4.T).dot(F2)).T) + np.dot(G4,((F3_G4.T).dot(F3)).T) + np.dot(G4, ((F4_G4.T).dot(F4)).T))) - K*d4
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/lib/twodim_base.py", line 216, in diag
+    @array_function_dispatch(_diag_dispatcher)
+KeyboardInterrupt
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    import Evolution_RK4 as EVO
+  File "Evolution_RK4.pyx", line 14, in init Evolution_RK4
+    import Tool
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 16
+    def Cart2Pol( vfcart, size_t Ntot):
+                                    ^
+SyntaxError: invalid syntax
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    import Evolution_RK4 as EVO
+  File "Evolution_RK4.pyx", line 14, in init Evolution_RK4
+    import Tool
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 8, in <module>
+    import AngleDistribution as AD
+ModuleNotFoundError: No module named 'AngleDistribution'
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 170, in Visall
+    fig.add_trace(go.Scatter(x=IN.unitx, y=AD.Cart2Pol(FeG,IN.Ntot)[:,2], mode='lines', name='Fe, G-AFM')) #phi
+NameError: name 'AD' is not defined
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 170, in Visall
+    fig.add_trace(go.Scatter(x=IN.unitx, y=Cart2Pol(FeG,IN.Ntot)[:,2], mode='lines', name='Fe, G-AFM')) #phi
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 22, in Cart2Pol
+    ret[i,2] = np.arctan(vfcart[i,0],vfcart[i,1])
+TypeError: return arrays must be of ArrayType
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:21: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+20000 velocity: 1.634359490797961e-05 ERROR : spin config did not converge.
+main.py:33: RuntimeWarning:
+
+overflow encountered in power
+
+
+
+E_tot  = -37078.642412581765
+E_bulk = -37630.766775036376
+Spin evolution :  533.0051257610321
+total time     :  536.124048948288
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:21: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+20000 velocity: 1.4990457830371496e-07 ERROR : spin config did not converge.
+
+
+E_tot  = -74799.34189981352
+E_bulk = -75351.53157532187
+Spin evolution :  1318.7437920570374
+total time     :  1322.9861631393433
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    import Evolution_RK4 as EVO
+  File "Evolution_RK4.pyx", line 14, in init Evolution_RK4
+    import Tool
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 185
+    ply.plot(fig, filename=str(str(resultfolder)+str(title)+".html"), auto_open=autoopen)
+      ^
+SyntaxError: invalid syntax
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:20: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 173, in Visall
+    fig.update_layout(
+AttributeError: 'Figure' object has no attribute 'update_layout'
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:20: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 185, in Visall
+    ply.plot(fig, filename=str(str(resultfolder)+str(title)+".html"), auto_open=autoopen)
+NameError: name 'title' is not defined
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:20: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 183, in Visall
+    color="#7f7f7f")))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/basedatatypes.py", line 3358, in update
+    BaseFigure._perform_update(self, kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/basedatatypes.py", line 2585, in _perform_update
+    plotly_obj[key] = val
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/basedatatypes.py", line 4059, in __setitem__
+    super(BaseLayoutHierarchyType, self).__setitem__(prop, value)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/basedatatypes.py", line 3176, in __setitem__
+    res[prop[-1]] = value
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/basedatatypes.py", line 3166, in __setitem__
+    self._set_prop(prop, value)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/basedatatypes.py", line 3407, in _set_prop
+    raise err
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/basedatatypes.py", line 3402, in _set_prop
+    val = validator.validate_coerce(val)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/_plotly_utils/basevalidators.py", line 1005, in validate_coerce
+    self.raise_invalid_val(v)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/_plotly_utils/basevalidators.py", line 277, in raise_invalid_val
+    valid_clr_desc=self.description()))
+ValueError: 
+    Invalid value of type 'plotly.graph_objs.layout.Title' received for the 'text' property of layout.title
+        Received value: layout.Title({
+    'text': 'Phi-profileInit', 'x': 0, 'xref': 'paper'
+})
+
+    The 'text' property is a string and must be specified as:
+      - A string
+      - A number that will be converted to a string
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    import Evolution_RK4 as EVO
+  File "Evolution_RK4.pyx", line 14, in init Evolution_RK4
+    import Tool
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 176
+    xaxis=go.layout.XAxis(title=go.layout.xaxis.Title(text="LLG Steps",
+        ^
+SyntaxError: invalid syntax
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    import Evolution_RK4 as EVO
+  File "Evolution_RK4.pyx", line 14, in init Evolution_RK4
+    import Tool
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 176
+    xaxis=go.layout.XAxis(title=go.layout.xaxis.Title(text="LLG Steps",
+    ^
+IndentationError: unexpected indent
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:20: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 186, in Visall
+    ply.plot(fig, filename=str(str(resultfolder)+str(title)+".html"), auto_open=autoopen)
+NameError: name 'title' is not defined
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:20: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+2000 velocity: 0.004139497941831552 ERROR : spin config did not converge.
+
+
+E_tot  = -74799.41570102453
+E_bulk = -75351.27946816015
+Spin evolution :  151.3739950656891
+total time     :  155.1432909965515
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 21, in <module>
+    main(resultfolder, autoopen)
+NameError: name 'main' is not defined
+dhcp-057-026:Cythonized kojikawahara$ python3 main.py
+/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py:20: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+120 velocity: 0.11348066591563345^C Traceback (most recent call last):
+  File "main.py", line 67, in <module>
+    main(resultfolder, autoopen)
+  File "main.py", line 30, in main
+    (E_tot, velocity, loopcount) = EVO.EvoLoop(IN.maxloop, IN.minloop, IN.convergence*IN.convergence)  # return total energy
+  File "Evolution_RK4.pyx", line 261, in Evolution_RK4.EvoLoop
+    k3d1, k3d2, k3d3, k3d4) = Evolve(normalize(F1+0.5*dt*k2F1), normalize(F2+0.5*dt*k2F2), normalize(F3+0.5*dt*k2F3), normalize(F4+0.5*dt*k2F4),
+  File "Evolution_RK4.pyx", line 385, in Evolution_RK4.Evolve
+    dd1 = -a*(np.diag( np.dot(G1, ((F1_G1.T).dot(F1)).T) + np.dot(G1, ((F2_G1.T).dot(F2)).T) - np.dot(G1,((F3_G1.T).dot(F3)).T) - np.dot(G1, ((F4_G1.T).dot(F4)).T))) - K*d1
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/lib/twodim_base.py", line 216, in diag
+    @array_function_dispatch(_diag_dispatcher)
+KeyboardInterrupt
+dhcp-057-026:Cythonized kojikawahara$ python3
+Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 03:03:55) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import main
+>>> main("./resultfolder/test", True)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'module' object is not callable
+>>> main.main("./resultfolder/test", True)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/main.py", line 27, in main
+    Tool.Visall("Init",resultfolder,autoopen)
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 119, in Visall
+    str(str(status)+"_ferro_Fe"))
+  File "/Users/kojikawahara/Documents/GitHub/symulation/DWstructure/Cythonized/Tool.py", line 108, in visCart
+    ply.plot(fig1, filename=str(str(resultfolder)+str(title)+".html"), auto_open=autoopen)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/offline/offline.py", line 556, in plot
+    auto_open=auto_open)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/plotly/io/_html.py", line 483, in write_html
+    with open(file, 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './resultfolder/testInit_ferro_Fe.html'
+>>> main.main("./resultfolder/test/", True)
