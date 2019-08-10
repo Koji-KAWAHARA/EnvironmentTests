@@ -34,7 +34,7 @@ def main():
     start = time()
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
-        params = map(lambda _: (random(), num_calc), range(num_tasks))
+        params = map(lambda _: (random(), num_calc), range(num_tasks)) # lambda (argv):(process) , range()is second argv of map function
         results = executor.map(task, params, chunksize=chunk_size)
     getLogger().info(sum(results))
 
