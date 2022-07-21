@@ -1,0 +1,77 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Program Files/eigen-3.4.0/**",
+                "C:/Program Files (x86)/Intel/oneAPI/mkl/latest/include/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "C:\\Program Files (x86)\\Intel\\oneAPI\\compiler\\latest\\windows\\bin\\dpcpp.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "${default}",
+            "compilerArgs": [
+                "-I 'C:\\Program Files (x86)\\Intel\\oneAPI'",
+                "-DMKL_ILP64",
+                "-I $Env:MKLROOT/include"
+            ],
+            "mergeConfigurations": false,
+            "browse": {
+                "path": [],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "configurationProvider": "ms-vscode.makefile-tools"
+        },
+        {
+            "name": "dpcpp",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:\\Program Files\\eigen-3.4.0\\**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "C:\\Program Files (x86)\\Intel\\oneAPI\\compiler\\latest\\windows\\bin\\dpcpp",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-clang-x64",
+            "compilerArgs": [
+                "/I 'C:\\Program Files (x86)\\Intel\\oneAPI'",
+                "/I `C:\\Program Files (x86)\\Intel\\oneAPI\\mkl\\2022.1.0\\include`"
+            ],
+            "configurationProvider": "ms-vscode.makefile-tools"
+        },
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/opt/intel/oneapi/mkl/latest/include/**",
+                "/Users/kojikawahara/eigen-3.4.0/**"
+            ],
+            "defines": [],
+            "macFrameworkPath": [],
+            "compilerPath": "/opt/intel/oneapi/compiler/latest/mac/bin/intel64/icpc",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-gcc-x64",
+            "configurationProvider": "ms-vscode.makefile-tools",
+            "compilerArgs": [
+                "-DMKL_ILP64",
+                "-I /opt/intel/oneapi/mkl/latest/include/",
+                "-I /Users/kojikawahara/eigen-3.4.0/**"
+            ]
+        }
+
+    ],
+    "version": 4
+}
