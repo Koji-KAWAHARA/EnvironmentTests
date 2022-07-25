@@ -1,6 +1,7 @@
 #%%
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 """read dataframe from file,(with 1st raw being index)"""
 #df = pd.read_csv("./testdata/testrun_main/detail/t_0.txt",header=[1],sep=" ")
@@ -21,4 +22,12 @@ dphase['D1']=df['C1']*np.sin(df['C2'])
 dphase['D2']=df['C3']*np.sin(df['C4'])
 dphase['D3']=df['C5']*2
 dphase
+
+fig = plt.figure()
+scatter = fig.add_subplot(111)
+"""row-based plotting"""
+for row in dphase.itertuples():
+    print(row)
+    scatter.scatter(row.D1, row.D2)
+
 # %%
