@@ -1,0 +1,13 @@
+#test simulation setting
+simumode = CG
+Position_FPwall = 0.333
+Position_GPwall = 0.666
+maxloop=100000
+
+IO_FOLDER=./RUNS_20220726/C_0.01_FP_0.333_GP_0.666
+INI_CONFIG=./RUNS_20220726/C_0.01_FP_0.333_GP_0.666/Bulk1.txt
+logfile=./RUNS_20220726/C_0.01_FP_0.333_GP_0.666/log.txt
+save_interval=1000
+fg_sourcefile = NON
+fp_sourcefile = NON
+gp_sourcefile = NON

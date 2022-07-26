@@ -1,0 +1,22 @@
+#model parameters
+Nr=500
+Nth=500
+minR=0.10
+maxR=100
+H=0
+E=0
+Kf=8.0
+Kg=1.0
+Kp=0.5
+Afx=-0.4
+Afy=-0.3
+Agx=-0.05
+Agy=-0.02
+Ap=1.0
+C=0.01
+dt=0.000001
+
+max_spin_movemet_per_single_step = 0.01
+#<-in unit of M_PI
+INI_MODE=TRI_DW_vortex
+OP_fluctuation=0.00001
