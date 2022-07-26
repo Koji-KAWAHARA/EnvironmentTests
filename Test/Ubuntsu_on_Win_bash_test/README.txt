@@ -1,5 +1,7 @@
 Windows上で.shファイル (Linuxのシェルスクリプト)を使うための覚書
 
+*なぜかPowerShellにはhoge.exeの出力が一切表示されない。コマンドプロンプトを使うべし。
+*以下すべてPowerShellはコマンドプロンプトに読み替え。
 
 <準備編>
 0. Editorでソースコード(hoge.sh)の改行が"CRLF(\r\n)"ではなく"LF(\n)"になっていることを確認する。
@@ -23,11 +25,13 @@ ln -s /mnt/c/Users/catma/Documents/ .
 正確には、"/mnt/"の部分がデバイスのマウントを介して違うデバイスを見ている。
 なのでたとえば"cd /mnt/c/Users/catma/"などと書くとLinuxからWindowsのフォルダにアクセスできる。
 
+	7. IntelCompilerのために、次のコマンドを実行
+	$ C:\"Program Files (x86)"\Intel\oneAPI\setvars.bat
 
 <実行編>
-
 $bash hoge.sh を入力するだけ。
 
 なお	
-linuxからwindowsのexeファイルはそのまま呼び出せる。
-$huga.exe
+linuxからwindowsのexeファイルはそのまま呼び出せる。->嘘やんけ
+$./huga.exe
+でうんともスントも言わない
