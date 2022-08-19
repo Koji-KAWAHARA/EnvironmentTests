@@ -4,8 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/Program Files/eigen-3.4.0/**",
-                "C:/Program Files (x86)/Intel/oneAPI/mkl/latest/include/**"
+                "C:\\Program Files\\eigen-3.4.0",
+                "C:\\Program Files (x86)\\Intel\\oneAPI\\mkl\\latest\\include"
             ],
             "defines": [
                 "_DEBUG",
@@ -13,7 +13,7 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.19041.0",
-            "compilerPath": "C:\\Program Files (x86)\\Intel\\oneAPI\\compiler\\latest\\windows\\bin\\dpcpp.exe",
+            "compilerPath": "C:\\Program Files (x86)\\Intel\\oneAPI\\compiler\\latest\\windows\\bin\\dpcpp-cl.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "${default}",
@@ -71,7 +71,6 @@
                 "-I /Users/kojikawahara/eigen-3.4.0/**"
             ]
         }
-
     ],
     "version": 4
 }
