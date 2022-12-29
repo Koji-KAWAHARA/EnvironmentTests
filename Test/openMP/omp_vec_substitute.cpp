@@ -4,6 +4,8 @@ Matrix Mat = Matrix_of_size_(N,M)
 Vector Vec = Vector_of_size_N*M   : flattend version of M
 Vec(M*i+j) = Mat(i,j)
 */
+//to compile:
+//icx .\omp_vec_substitute.cpp -Qopenmp -I 'C:/Program Files/eigen-3.4.0/' -o .\omp_vec_substitute.exe
 
 #define EIGEN_USE_MKL_ALL
 #define _USE_MATH_DEFINES
@@ -19,7 +21,7 @@ Vec(M*i+j) = Mat(i,j)
 
 
 int main(void){
-    omp_set_num_threads(2);
+    omp_set_num_threads(4);
     int N=4;
     int M=4;
     Eigen::MatrixXd Mat = Eigen::MatrixXd::Constant(N,M,1); //all 1;

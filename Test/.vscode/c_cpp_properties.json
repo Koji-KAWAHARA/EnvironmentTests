@@ -4,16 +4,17 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:\\Program Files\\eigen-3.4.0",
-                "C:\\Program Files (x86)\\Intel\\oneAPI\\mkl\\latest\\include"
+                "C:\\Program Files\\eigen-3.4.0\\**",
+                "C:\\Program Files\\eigen-3.4.0\\Eigen\\**",
+                "C:\\Program Files (x86)\\Intel\\oneAPI\\mkl\\latest\\include\\**"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "windowsSdkVersion": "10.0.19041.0",
-            "compilerPath": "C:\\Program Files (x86)\\Intel\\oneAPI\\compiler\\latest\\windows\\bin\\dpcpp-cl.exe",
+            "windowsSdkVersion": "10.0.22000.0",
+            "compilerPath": "C:/Program Files (x86)/Intel/oneAPI/compiler/latest/windows/bin/icx.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "${default}",
